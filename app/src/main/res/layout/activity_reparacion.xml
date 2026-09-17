@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#F5F5F5">
+
+    <!-- Barra superior estilo Hiopos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="30dp"
+        android:background="#1A1A2E"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BÚSQUEDA DE REPARACIONES"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCerrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cerrar"
+            android:textColor="#FFFFFF"
+            android:background="@android:color/transparent"
+            android:drawableStart="@android:drawable/ic_menu_close_clear_cancel" />
+
+    </LinearLayout>
+
+    <!-- Contenido principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Campo de búsqueda -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código de resguardo"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etCodigo"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:hint="Ej: 02VS6UN796A"
+                android:textSize="16sp"
+                android:background="#FFFFFF"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnBuscar"
+                android:layout_width="120dp"
+                android:layout_height="56dp"
+                android:text="BUSCAR"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4CAF50"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Separador -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Panel resultado (oculto hasta buscar) -->
+        <LinearLayout
+            android:id="@+id/panelResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <!-- Columna izquierda: datos de la reparación -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/tvReferencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvImporte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Columna derecha: botones -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btnConfirmar"
+                    android:layout_width="130dp"
+                    android:layout_height="48dp"
+                    android:text="CONFIRMAR"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#4CAF50"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    android:layout_width="130dp"
+                    android:layout_height="48dp"
+                    android:text="CANCELAR"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#9E9E9E" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Mensaje de error (oculto hasta que haya error) -->
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#F44336"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:padding="12dp"
+            android:background="#FFEBEE" />
+
+    </LinearLayout>
+
+</LinearLayout>

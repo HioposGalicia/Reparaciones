@@ -1,0 +1,59 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.ReparacionesJL">
+        <!--  FileProvider para compartir ficheros con Hiopos (Android 10+)  -->
+        <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <!--  INITIALIZE: Hiopos nos inicializa al arrancar  -->
+        <activity android:name=".InitializeActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.document.arreglosjl.INITIALIZE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--  GET_BEHAVIOR: Hiopos pregunta cómo debe llamarnos  -->
+        <activity android:name=".BehaviorActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.document.arreglosjl.GET_BEHAVIOR"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--  GET_VERSION: Hiopos comprueba nuestra versión  -->
+        <activity android:name=".GetVersionActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.document.arreglosjl.GET_VERSION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--  MODIFY_DOCUMENT: núcleo de la integración  -->
+        <activity android:name=".ModifyDocumentActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.document.arreglosjl.MODIFY_DOCUMENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--  Pantalla de búsqueda de reparación  -->
+        <activity android:name=".ReparacionActivity" android:exported="false"/>
+        <activity android:name=".BeforePrintActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.document.arreglosjl.BEFORE_PRINT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--  FINALIZE: Hiopos cierra, liberamos recursos  -->
+        <activity android:name=".FinalizeActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.document.arreglosjl.FINALIZE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--  SHOW_SETUP_SCREEN: Pantalla de configuración de la app  -->
+        <activity android:name=".Configureactivity" android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.document.arreglosjl.SHOW_SETUP_SCREEN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

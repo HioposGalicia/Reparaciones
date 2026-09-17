@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:fitsSystemWindows="true" android:background="#F5F5F5">
+    <!--  Barra superior  -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="30dp" android:background="#1A1A2E" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp">
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="CONFIGURACIÓN" android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvCerrar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✕ CERRAR" android:textColor="#FFFFFF" android:textSize="14sp" android:padding="8dp" />
+    </LinearLayout>
+    <!--  Contenido  -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="24dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Entorno de conexión" android:textSize="14sp" android:textColor="#666666" android:layout_marginBottom="16dp"/>
+        <RadioGroup
+            android:id="@+id/radioGroupEntorno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <RadioButton
+                android:id="@+id/radioPre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PRUEBAS"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp" />
+
+            <RadioButton
+                android:id="@+id/radioPro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PRODUCCIÓN"
+                android:textSize="16sp"
+                android:textColor="#333333" />
+
+        </RadioGroup>
+        <Button
+            android:id="@+id/btnProbarConexion"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="PROBAR CONEXIÓN"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvResultadoConexion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone" />
+        <!--  Botón guardar  -->
+        <Button android:id="@+id/btnGuardar" android:layout_width="match_parent" android:layout_height="56dp" android:text="GUARDAR" android:textColor="#FFFFFF" android:backgroundTint="#4CAF50" android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>
